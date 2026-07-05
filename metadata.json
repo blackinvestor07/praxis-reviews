@@ -1,6 +1,0 @@
-{
-  "name": "Software Comparison Bridge Page",
-  "description": "An independent, editorial comparison page between Systeme.io and GetResponse for digital creators and marketers in India.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}

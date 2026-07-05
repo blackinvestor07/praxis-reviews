@@ -7,17 +7,18 @@
 <meta name="description" content="The terms that govern your use of praxisreviews.com, including our disclaimer on affiliate links and editorial content.">
 <style>
   :root{
-    --ink:#16202E;
-    --ink-soft:#3A4654;
-    --muted:#697787;
-    --paper:#FAFBFC;
-    --panel:#F1F4F7;
-    --line:#E2E8EF;
-    --teal:#0B7A75;
-    --teal-dark:#085E5A;
+    --ink:#1A1A1A;
+    --ink-soft:#3F4643;
+    --muted:#5C6460;
+    --paper:#FDFCFB;
+    --panel:#F5F2EF;
+    --line:#E5E3E0;
+    --teal:#065F46;
+    --teal-dark:#044A36;
+    --teal-tint:rgba(6,95,70,.06);
     --white:#FFFFFF;
-    --radius:14px;
-    --shadow:0 1px 2px rgba(22,32,46,.04), 0 8px 24px rgba(22,32,46,.06);
+    --radius:4px;
+    --shadow:0 1px 2px rgba(26,26,26,.04), 0 8px 24px rgba(26,26,26,.05);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -29,49 +30,49 @@
   .wrap{max-width:760px;margin:0 auto;padding:0 20px}
 
   /* ── Trust bar ── */
-  .trustbar{background:var(--ink);color:#C7D2DE;font-size:13px;letter-spacing:.02em}
+  .trustbar{background:var(--ink);color:#D8DAD8;font-size:13px;letter-spacing:.02em}
   .trustbar .wrap{display:flex;align-items:center;justify-content:center;gap:8px;padding:9px 20px;text-align:center}
   .trustbar strong{color:var(--white);font-weight:600}
-  .dot{width:6px;height:6px;border-radius:50%;background:var(--teal);flex-shrink:0;box-shadow:0 0 0 3px rgba(11,122,117,.25)}
+  .dot{width:6px;height:6px;border-radius:50%;background:var(--teal);flex-shrink:0;box-shadow:0 0 0 3px rgba(6,95,70,.25)}
 
   /* ── Masthead (nav injected by /assets/header.js) ── */
   .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;letter-spacing:-.01em;color:var(--ink);text-decoration:none}
-  .logo .mark{width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,var(--teal),var(--teal-dark));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px}
+  .logo .mark{width:30px;height:30px;border-radius:var(--radius);background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;font-family:Georgia,"Times New Roman",Times,serif;font-style:italic}
 
   /* ── Hero ── */
   .hero{padding:46px 0 30px;text-align:left}
-  .eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--teal-dark);background:rgba(11,122,117,.08);padding:6px 12px;border-radius:99px;margin-bottom:18px}
-  h1{font-size:30px;line-height:1.28;letter-spacing:-.015em;font-weight:800;margin-bottom:16px}
-  .standfirst{font-size:19px;color:var(--ink-soft);max-width:60ch}
+  .eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-dark);background:var(--teal-tint);border:1px solid rgba(6,95,70,.15);padding:6px 12px;border-radius:99px;margin-bottom:18px}
+  h1{font-family:Georgia,"Times New Roman",Times,serif;font-style:italic;font-weight:400;font-size:32px;line-height:1.22;letter-spacing:-.005em;margin-bottom:16px}
+  .standfirst{font-size:18px;color:var(--muted);max-width:62ch}
 
   /* ── Body copy ── */
   .sec{margin:40px 0}
-  .sec > h2{font-size:22px;letter-spacing:-.02em;font-weight:750;margin-bottom:14px}
-  .sec p{color:var(--ink-soft);font-size:16.5px;margin-bottom:16px}
+  .sec > h2{font-family:Georgia,serif;font-size:21px;font-weight:700;letter-spacing:-.005em;margin-bottom:14px;color:var(--ink)}
+  .sec p{color:var(--ink-soft);font-size:16px;margin-bottom:16px}
   .sec p:last-child{margin-bottom:0}
   .sec p a{color:var(--teal-dark)}
   .sec ul{margin:0 0 16px;padding-left:22px;display:grid;gap:10px}
   .sec ul:last-child{margin-bottom:0}
-  .sec li{color:var(--ink-soft);font-size:16.5px}
+  .sec li{color:var(--ink-soft);font-size:16px}
   .sec li b{color:var(--ink)}
   hr{border:none;border-top:1px solid var(--line);margin:0}
-  .closing{font-size:14.5px;color:var(--muted);font-style:italic}
+  .closing{font-size:14px;color:var(--muted);font-style:italic}
 
   /* ── Footer / disclaimer ── */
   footer{border-top:1px solid var(--line);background:var(--panel);margin-top:50px;padding:30px 0 40px}
   .foot-meta{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--muted);margin-bottom:18px}
   .foot-meta a{color:var(--teal-dark);text-decoration:none}
-  .disclaimer{font-size:13.5px;color:var(--muted);line-height:1.7;margin-bottom:14px}
+  .disclaimer{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:14px}
   .disclaimer b{color:var(--ink-soft)}
   .copyright{font-size:13px;color:var(--muted)}
 
   /* ── Responsive ── */
   @media (max-width:600px){
     body{font-size:16px}
-    h1{font-size:23px;line-height:1.32}
-    .standfirst{font-size:17px}
+    h1{font-size:25px}
+    .standfirst{font-size:16.5px}
     .hero{padding:34px 0 24px}
-    .sec > h2{font-size:20px}
+    .sec > h2{font-size:19px}
     .trustbar .wrap{font-size:12px}
   }
 </style>
@@ -82,7 +83,7 @@
 <div class="trustbar">
   <div class="wrap">
     <span class="dot"></span>
-    <span><strong>Independent review</strong> · We tested 7 all-in-one marketing platforms for Indian creators · No brand paid for placement</span>
+    <span><strong>Independent review</strong> · Hands-on testing, no sponsored placements</span>
   </div>
 </div>
 

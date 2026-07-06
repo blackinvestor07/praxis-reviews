@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How We Test — Praxis Reviews Methodology</title>
+<meta name="description" content="How Praxis Reviews tests and rates software for emerging markets — our independence policy, testing process, and rating criteria.">
+<style>
+  :root{
+    --ink:#1A1A1A;
+    --ink-soft:#3F4643;
+    --muted:#5C6460;
+    --paper:#FDFCFB;
+    --panel:#F5F2EF;
+    --line:#E5E3E0;
+    --teal:#065F46;
+    --teal-dark:#044A36;
+    --teal-tint:rgba(6,95,70,.06);
+    --white:#FFFFFF;
+    --radius:4px;
+    --shadow:0 1px 2px rgba(26,26,26,.04), 0 8px 24px rgba(26,26,26,.05);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);background:var(--paper);line-height:1.6;
+    font-size:17px;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+
+  /* ── Trust bar ── */
+  .trustbar{background:var(--ink);color:#D8DAD8;font-size:13px;letter-spacing:.02em}
+  .trustbar .wrap{display:flex;align-items:center;justify-content:center;gap:8px;padding:9px 20px;text-align:center}
+  .trustbar strong{color:var(--white);font-weight:600}
+  .dot{width:6px;height:6px;border-radius:50%;background:var(--teal);flex-shrink:0;box-shadow:0 0 0 3px rgba(6,95,70,.25)}
+
+  /* ── Masthead (nav injected by /assets/header.js) ── */
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;letter-spacing:-.01em;color:var(--ink);text-decoration:none}
+  .logo .mark{width:30px;height:30px;border-radius:var(--radius);background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;font-family:Georgia,"Times New Roman",Times,serif;font-style:italic}
+
+  /* ── Hero ── */
+  .hero{padding:46px 0 30px;text-align:left}
+  .eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-dark);background:var(--teal-tint);border:1px solid rgba(6,95,70,.15);padding:6px 12px;border-radius:99px;margin-bottom:18px}
+  h1{font-family:Georgia,"Times New Roman",Times,serif;font-style:italic;font-weight:400;font-size:32px;line-height:1.22;letter-spacing:-.005em;margin-bottom:16px}
+  .standfirst{font-size:18px;color:var(--muted);max-width:62ch}
+
+  /* ── Body copy ── */
+  .sec{margin:40px 0}
+  .sec > h2{font-family:Georgia,serif;font-size:21px;font-weight:700;letter-spacing:-.005em;margin-bottom:14px;color:var(--ink)}
+  .sec p{color:var(--ink-soft);font-size:16px;margin-bottom:16px}
+  .sec p:last-child{margin-bottom:0}
+  .sec p a{color:var(--teal-dark)}
+  .sec ul{margin:0 0 16px;padding-left:22px;display:grid;gap:10px}
+  .sec ul:last-child{margin-bottom:0}
+  .sec li{color:var(--ink-soft);font-size:16px}
+  .sec li b{color:var(--ink)}
+  .sec strong{color:var(--ink)}
+  hr{border:none;border-top:1px solid var(--line);margin:0}
+
+  /* ── Axes table ── */
+  .tablewrap{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:var(--white);overflow-x:auto;margin:20px 0}
+  table{width:100%;border-collapse:collapse;font-size:14.5px}
+  th,td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line)}
+  thead th{background:var(--panel);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700}
+  tbody td:first-child{color:var(--ink);font-weight:700;white-space:nowrap;font-family:Georgia,serif}
+  tbody td:last-child{color:var(--ink-soft)}
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr:nth-child(even){background:var(--panel)}
+
+  /* ── Closing note ── */
+  .closing{font-size:14px;color:var(--muted);font-style:italic;margin-bottom:8px}
+  .closing:last-of-type{font-style:normal;font-weight:600;color:var(--ink-soft)}
+
+  /* ── Footer / disclaimer ── */
+  footer{border-top:1px solid var(--line);background:var(--panel);margin-top:50px;padding:30px 0 40px}
+  .foot-meta{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--muted);margin-bottom:18px}
+  .foot-meta a{color:var(--teal-dark);text-decoration:none}
+  .disclaimer{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:14px}
+  .disclaimer b{color:var(--ink-soft)}
+  .copyright{font-size:13px;color:var(--muted)}
+
+  /* ── Responsive ── */
+  @media (max-width:600px){
+    body{font-size:16px}
+    h1{font-size:25px}
+    .standfirst{font-size:16.5px}
+    .hero{padding:34px 0 24px}
+    .sec > h2{font-size:19px}
+    th,td{padding:12px 12px;font-size:13.5px}
+    thead th{font-size:10.5px}
+    .trustbar .wrap{font-size:12px}
+  }
+</style>
+</head>
+<body>
+
+<!-- TRUST BAR -->
+<div class="trustbar">
+  <div class="wrap">
+    <span class="dot"></span>
+    <span><strong>Independent review</strong> · Hands-on testing, no sponsored placements</span>
+  </div>
+</div>
+
+<!-- MASTHEAD -->
+<div id="site-header"></div>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <span class="eyebrow">Methodology</span>
+    <h1>How We Test — Our Review Methodology</h1>
+    <p class="standfirst">We started Praxis Reviews because most software reviews aren't written for the buyers who actually need them. The big affiliate sites are written from a US or Western European perspective — they don't know what an Indian dropshipper pays in INR, whether a Filipino solopreneur can accept PayMongo, or which platforms work over a 4G mobile connection in Tier-2 cities.</p>
+  </section>
+
+  <section class="sec">
+    <p>We focus on the markets the others overlook. And because every recommendation we publish has an affiliate link attached, we've made our methodology public — so you can see exactly how we arrive at a verdict, and judge for yourself whether to trust it.</p>
+  </section>
+
+  <hr>
+
+  <section class="sec">
+    <h2>1 · We are independent</h2>
+    <p>We earn commissions when readers click our affiliate links and purchase a product. Those commissions fund the site. But we never accept payment to change a verdict, rank a product higher, or remove a competitor from a comparison.</p>
+    <p>If you read a Praxis comparison and we recommend Product A over Product B, it's because we believe Product A is the better fit for the buyer described — not because A pays us more.</p>
+    <p>This is the entire point of an independent review site, and it's the standard we hold ourselves to. Our full affiliate disclosure is at <a href="/disclosure">praxisreviews.com/disclosure</a>.</p>
+  </section>
+
+  <hr>
+
+  <section class="sec">
+    <h2>2 · How we choose what to compare</h2>
+    <p>We don't review software randomly. For each new comparison page, we select products that share three properties:</p>
+    <ul>
+      <li><b>They serve the same buyer.</b> A Praxis comparison pairs two products that a real buyer would actually be choosing between — not a niche tool against an enterprise platform. "Systeme.io vs GetResponse" works because both target the same solopreneur audience. "Salesforce vs Mailchimp" would not.</li>
+      <li><b>They are accessible in the target market.</b> We only compare products that work in the country we're publishing for — meaning they accept local payment methods, support the relevant currency, and don't block users by IP. A product that doesn't process Razorpay payments cannot be recommended to Indian buyers, however good it is elsewhere.</li>
+      <li><b>They have established affiliate programs we have joined.</b> We don't recommend products we cannot verify the merchant relationship with. If a product is good but doesn't have an affiliate program we have access to, we may mention it in passing but won't headline a comparison around it.</li>
+    </ul>
+  </section>
+
+  <hr>
+
+  <section class="sec">
+    <h2>3 · How we test</h2>
+    <p>For each comparison, our process is the same:</p>
+    <p><strong>Hands-on signup.</strong> We create an account on every product we recommend, using a real email address and going through the actual signup flow as a buyer in the target market would. We note friction points: are credit card forms required when "free plan" is advertised? Does the onboarding ask for a phone number? Does the dashboard appear in English or the local language?</p>
+    <p><strong>Feature exercise.</strong> For the core features that matter to the buyer profile (sales funnels for an entrepreneur platform; server speed for a VPN; deliverability for email software), we use them. Build a funnel. Send a test campaign. Connect a real domain. Run a speed test. Document what works, what's confusing, and what's marketing fiction.</p>
+    <p><strong>Market-specific checks.</strong> This is where Praxis differs from US-focused review sites. For every product, we verify the things that matter in the target market specifically:</p>
+    <ul>
+      <li>Can buyers pay in local currency, using local payment methods (UPI / Razorpay for India; GCash / Maya / Xendit for Philippines)?</li>
+      <li>Is the interface usable on a mid-range Android device on a 4G connection — the most common setup in our target markets?</li>
+      <li>Does customer support respond to questions outside US business hours?</li>
+      <li>Are there hidden costs at checkout that don't appear on the international pricing page?</li>
+    </ul>
+    <p><strong>Cross-reference.</strong> We supplement hands-on testing with research from independent sources: official documentation, third-party reviews on G2, Capterra, and Trustpilot, and user discussions on Reddit and industry forums. Where third-party consensus differs from our hands-on experience, we say so.</p>
+    <p><strong>Time invested.</strong> A meaningful test takes time. For each comparison published, we have spent a minimum of two weeks evaluating the products before writing the verdict.</p>
+  </section>
+
+  <hr>
+
+  <section class="sec">
+    <h2>4 · How we rate</h2>
+    <p>Praxis comparisons always identify two winners, not one:</p>
+    <ul>
+      <li><b>Best overall</b> — the product we would recommend to most buyers in the target market.</li>
+      <li><b>Best value (or best for a specific use case)</b> — the product that serves a meaningful subset of buyers better, usually on price, simplicity, or a specific feature strength.</li>
+    </ul>
+    <p>We use this two-winner format because real software decisions are not "Product A is the best." They're "Product A is best for these buyers; Product B is best for those buyers." Forcing a single winner hides useful information from the reader.</p>
+    <p>For each comparison, we evaluate both products across the same axes:</p>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th>Axis</th><th>What we look at</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Value for money</td><td>Total cost including expected upgrades, against features delivered</td></tr>
+          <tr><td>Feature completeness</td><td>Does the product do what its marketing claims at the price advertised</td></tr>
+          <tr><td>Ease of use</td><td>Onboarding flow, dashboard clarity, learning curve for a non-technical buyer</td></tr>
+          <tr><td>Customer support</td><td>Response time, channel availability, quality of answers (we send real questions)</td></tr>
+          <tr><td>Market fit</td><td>Local payment, language, server location, support hours — for the target market specifically</td></tr>
+          <tr><td>Reputation</td><td>Third-party reviews, longevity, trust signals from independent sources</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>These axes are weighted differently per category — speed matters more for VPNs; integrations matter more for marketing platforms — and we explain the weighting in each comparison.</p>
+  </section>
+
+  <hr>
+
+  <section class="sec">
+    <h2>5 · We keep reviews current</h2>
+    <p>Software changes. Prices go up. Features get added. Affiliate programs get restructured. A review written in 2024 may be misleading by 2026.</p>
+    <p>Every published comparison shows the month and year of its last update at the top of the page. We aim to revisit each comparison at least twice a year, and we update immediately when:</p>
+    <ul>
+      <li>A product's pricing changes by more than 20%</li>
+      <li>A product adds or removes a feature we considered central to our verdict</li>
+      <li>A product gains or loses support in one of our target markets</li>
+      <li>A reader points out a factual error (please contact us — <a href="/contact">contact page</a>)</li>
+    </ul>
+    <p>If you find a review that hasn't been updated in over 12 months, treat it cautiously and verify pricing on the merchant's site before purchase.</p>
+  </section>
+
+  <hr>
+
+  <section class="sec">
+    <h2>6 · What we don't do</h2>
+    <p>To save you reading between the lines:</p>
+    <ul>
+      <li><b>We don't accept sponsored placements.</b> No product can pay to be added to a comparison or moved up in a ranking.</li>
+      <li><b>We don't write AI-generated reviews without testing the product.</b> Generative tools may help us draft and edit, but every verdict is grounded in actual hands-on use.</li>
+      <li><b>We don't recommend products we wouldn't use ourselves.</b> If a product is the only available option in its category, we'll say so honestly rather than recommend it enthusiastically.</li>
+      <li><b>We don't hide affiliate relationships.</b> Every link to a merchant is marked, and our <a href="/disclosure">affiliate disclosure</a> explains the financial relationship in full.</li>
+      <li><b>We don't review products we cannot access.</b> If a tool is gated, region-blocked, or paywalled in a way we cannot verify firsthand, we won't pretend to have tested it.</li>
+    </ul>
+  </section>
+
+  <hr>
+
+  <section class="sec">
+    <h2>7 · A note on our scale</h2>
+    <p>Praxis Reviews is currently a focused publication, not a 50-reviewer team. This means we cover fewer products in greater depth, rather than thin coverage of everything. We are growing — the categories on the site reflect what we have validated, and we add new categories only when we can do them properly.</p>
+    <p>If you have a request for a product or comparison we haven't covered yet, <a href="/contact">tell us</a>. We pay attention to what readers ask for.</p>
+  </section>
+
+  <hr>
+
+  <section class="sec">
+    <p class="closing">This page was last updated in June 2026. We update our methodology when we change our process, and we will mark the update at the top of this page when we do.</p>
+    <p class="closing">Praxis Reviews · praxisreviews.com</p>
+  </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-meta">
+      <a href="/about">About</a>
+      <a href="/methodology">How We Test</a>
+      <a href="/disclosure">Affiliate Disclosure</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+      <a href="/contact">Contact</a>
+    </div>
+    <p class="disclaimer">
+      <b>Advertising disclosure.</b> Praxis Reviews is reader-supported. When you click through to a partner via one of our links and complete a purchase or sign-up, we may earn a commission at no extra cost to you. This never affects our verdicts — we test every product ourselves and recommend only what we'd use. Pricing shown is accurate at time of publication; check the partner site for current offers.
+    </p>
+    <p class="copyright">© 2026 Praxis Reviews · praxisreviews.com</p>
+  </div>
+</footer>
+
+<script src="/assets/header.js" defer></script>
+</body>
+</html>

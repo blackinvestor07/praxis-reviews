@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Affiliate Disclosure — Praxis Reviews</title>
+<meta name="description" content="How Praxis Reviews uses affiliate links, why commissions never change our verdicts, and how to verify pricing before you buy.">
+<style>
+  :root{
+    --ink:#1A1A1A;
+    --ink-soft:#3F4643;
+    --muted:#5C6460;
+    --paper:#FDFCFB;
+    --panel:#F5F2EF;
+    --line:#E5E3E0;
+    --teal:#065F46;
+    --teal-dark:#044A36;
+    --teal-tint:rgba(6,95,70,.06);
+    --white:#FFFFFF;
+    --radius:4px;
+    --shadow:0 1px 2px rgba(26,26,26,.04), 0 8px 24px rgba(26,26,26,.05);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);background:var(--paper);line-height:1.6;
+    font-size:17px;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+
+  /* ── Trust bar ── */
+  .trustbar{background:var(--ink);color:#D8DAD8;font-size:13px;letter-spacing:.02em}
+  .trustbar .wrap{display:flex;align-items:center;justify-content:center;gap:8px;padding:9px 20px;text-align:center}
+  .trustbar strong{color:var(--white);font-weight:600}
+  .dot{width:6px;height:6px;border-radius:50%;background:var(--teal);flex-shrink:0;box-shadow:0 0 0 3px rgba(6,95,70,.25)}
+
+  /* ── Masthead (nav injected by /assets/header.js) ── */
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;letter-spacing:-.01em;color:var(--ink);text-decoration:none}
+  .logo .mark{width:30px;height:30px;border-radius:var(--radius);background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;font-family:Georgia,"Times New Roman",Times,serif;font-style:italic}
+
+  /* ── Hero ── */
+  .hero{padding:46px 0 30px;text-align:left}
+  .eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-dark);background:var(--teal-tint);border:1px solid rgba(6,95,70,.15);padding:6px 12px;border-radius:99px;margin-bottom:18px}
+  h1{font-family:Georgia,"Times New Roman",Times,serif;font-style:italic;font-weight:400;font-size:32px;line-height:1.22;letter-spacing:-.005em;margin-bottom:16px}
+  .standfirst{font-size:18px;color:var(--muted);max-width:62ch}
+
+  /* ── Body copy ── */
+  .sec{margin:40px 0}
+  .sec > h2{font-family:Georgia,serif;font-size:21px;font-weight:700;letter-spacing:-.005em;margin-bottom:14px;color:var(--ink)}
+  .sec p{color:var(--ink-soft);font-size:16px;margin-bottom:16px}
+  .sec p:last-child{margin-bottom:0}
+  .sec p a{color:var(--teal-dark)}
+  .sec ul{margin:0 0 16px;padding-left:22px;display:grid;gap:10px}
+  .sec ul:last-child{margin-bottom:0}
+  .sec li{color:var(--ink-soft);font-size:16px}
+  .sec li b{color:var(--ink)}
+  hr{border:none;border-top:1px solid var(--line);margin:0}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:1px 5px;font-size:14px}
+
+  /* ── Footer / disclaimer ── */
+  footer{border-top:1px solid var(--line);background:var(--panel);margin-top:50px;padding:30px 0 40px}
+  .foot-meta{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--muted);margin-bottom:18px}
+  .foot-meta a{color:var(--teal-dark);text-decoration:none}
+  .disclaimer{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:14px}
+  .disclaimer b{color:var(--ink-soft)}
+  .copyright{font-size:13px;color:var(--muted)}
+
+  /* ── Responsive ── */
+  @media (max-width:600px){
+    body{font-size:16px}
+    h1{font-size:25px}
+    .standfirst{font-size:16.5px}
+    .hero{padding:34px 0 24px}
+    .sec > h2{font-size:19px}
+    .trustbar .wrap{font-size:12px}
+  }
+</style>
+</head>
+<body>
+
+<!-- TRUST BAR -->
+<div class="trustbar">
+  <div class="wrap">
+    <span class="dot"></span>
+    <span><strong>Independent review</strong> · Hands-on testing, no sponsored placements</span>
+  </div>
+</div>
+
+<!-- MASTHEAD -->
+<div id="site-header"></div>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <span class="eyebrow">Affiliate Disclosure</span>
+    <h1>Affiliate Disclosure</h1>
+    <p class="standfirst">Praxis Reviews is reader-supported. When you click through to a partner via one of our links and complete a purchase or sign-up, we may earn a commission at no extra cost to you. This never affects our verdicts — we test every product ourselves and recommend only what we'd use. Pricing shown is accurate at time of publication; check the partner site for current offers.</p>
+  </section>
+
+  <hr>
+
+  <section class="sec">
+    <h2>How affiliate links work</h2>
+    <p>Most links to the products we review are affiliate links. If you click one and later buy or sign up — sometimes within a set window, not necessarily on the same visit — the merchant pays us a small commission. You never pay more for using our link; in many cases the merchant's price is identical whether you find them through us or search for them directly.</p>
+    <p>Some links, particularly to newer partners we haven't been approved for yet, are plain non-affiliate links. Where that's the case on a given page, we say so.</p>
+  </section>
+
+  <hr>
+
+  <section class="sec">
+    <h2>Commissions never change our verdicts</h2>
+    <p>We choose which products to feature and how to rank them before we know — or regardless of — which one pays a higher commission. Our recommendations come from hands-on testing against the criteria in our <a href="/methodology">testing methodology</a>: value for money, feature completeness, ease of use, customer support, market fit, and reputation.</p>
+    <p>If a product with a lower commission rate is the better fit for a reader, we recommend it anyway. We've turned down the temptation to feature a worse product for a bigger payout, and we intend to keep it that way — it's the only thing that makes an independent review site worth reading.</p>
+  </section>
+
+  <hr>
+
+  <section class="sec">
+    <h2>Prices and features change — verify before you buy</h2>
+    <p>Software pricing, plan limits, and features change more often than we can instantly update every published page. Every comparison shows the month it was last tested, and we revisit pages on the schedule described in our methodology. Even so, treat the prices on our site as a strong estimate, not a guarantee, and confirm the current price and plan details on the merchant's own site before you pay.</p>
+  </section>
+
+  <hr>
+
+  <section class="sec">
+    <h2>How to spot an affiliate link on our site</h2>
+    <p>Affiliate links to the products we recommend are marked with <code>rel="sponsored"</code> in the page code (a technical tag search engines use to identify paid or commission-based links) and typically appear as the prominent "Start Free" or "Get [Product]" buttons in our comparisons. If you're ever unsure whether a specific link on a page is an affiliate link, <a href="/contact">ask us</a> and we'll tell you.</p>
+  </section>
+
+  <hr>
+
+  <section class="sec">
+    <h2>Questions about this policy</h2>
+    <p>If anything here is unclear, or you think a page doesn't live up to it, <a href="/contact">get in touch</a>. We'd rather hear about it than have you find it out the hard way.</p>
+  </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-meta">
+      <a href="/about">About</a>
+      <a href="/methodology">How We Test</a>
+      <a href="/disclosure">Affiliate Disclosure</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+      <a href="/contact">Contact</a>
+    </div>
+    <p class="disclaimer">
+      <b>Advertising disclosure.</b> Praxis Reviews is reader-supported. When you click through to a partner via one of our links and complete a purchase or sign-up, we may earn a commission at no extra cost to you. This never affects our verdicts — we test every product ourselves and recommend only what we'd use. Pricing shown is accurate at time of publication; check the partner site for current offers.
+    </p>
+    <p class="copyright">© 2026 Praxis Reviews · praxisreviews.com</p>
+  </div>
+</footer>
+
+<script src="/assets/header.js" defer></script>
+</body>
+</html>

@@ -7,55 +7,75 @@
 <meta name="description" content="Praxis Reviews writes independent software buying guides for emerging markets. Here's who we are and how we work.">
 <style>
   :root{
-    --ink:#1A1A1A;
-    --ink-soft:#3F4643;
-    --muted:#5C6460;
-    --paper:#FDFCFB;
-    --panel:#F5F2EF;
-    --line:#E5E3E0;
-    --teal:#065F46;
-    --teal-dark:#044A36;
-    --teal-tint:rgba(6,95,70,.06);
-    --white:#FFFFFF;
-    --radius:4px;
-    --shadow:0 1px 2px rgba(26,26,26,.04), 0 8px 24px rgba(26,26,26,.05);
+    --paper:#F5F4EE;
+    --panel:#EDEBE0;
+    --ink:#15201A;
+    --ink-soft:#3E4941;
+    --muted:#67716A;
+    --teal:#0B5D3B;
+    --teal-dark:#063C27;
+    --teal-tint:rgba(11,93,59,.08);
+    --amber:#A67C2E;
+    --white:#EDEBE0;
+    --line:#DBD7C9;
+    --radius:3px;
+    --shadow:0 1px 2px rgba(21,32,26,.06), 0 18px 40px -14px rgba(21,32,26,.22);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper:#101915; --panel:#16211B; --ink:#EDEAE0; --ink-soft:#C7C9BD; --muted:#8B9389;
+      --teal:#3FA679; --teal-dark:#1F7A52; --teal-tint:rgba(63,166,121,.12);
+      --amber:#D9A94A; --white:#16211B; --line:#293530;
+      --shadow:0 1px 2px rgba(0,0,0,.3), 0 18px 44px -14px rgba(0,0,0,.6);
+    }
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
   body{
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    color:var(--ink);background:var(--paper);line-height:1.6;
+    color:var(--ink);
+    background:
+      radial-gradient(circle at 1px 1px, var(--line) 1px, transparent 0) 0 0/22px 22px,
+      var(--paper);
+    line-height:1.6;
     font-size:17px;-webkit-font-smoothing:antialiased;
   }
   .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+  :focus-visible{outline:2px solid var(--teal);outline-offset:3px}
 
   /* ── Trust bar ── */
-  .trustbar{background:var(--ink);color:#D8DAD8;font-size:13px;letter-spacing:.02em}
+  .trustbar{background:var(--ink);color:#D8DAD3;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase}
+  @media (prefers-color-scheme: dark){ .trustbar{background:#080D0A} }
   .trustbar .wrap{display:flex;align-items:center;justify-content:center;gap:8px;padding:9px 20px;text-align:center}
-  .trustbar strong{color:var(--white);font-weight:600}
-  .dot{width:6px;height:6px;border-radius:50%;background:var(--teal);flex-shrink:0;box-shadow:0 0 0 3px rgba(6,95,70,.25)}
+  .trustbar strong{color:#fff;font-weight:600}
+  .dot{width:6px;height:6px;border-radius:50%;background:var(--teal);flex-shrink:0;box-shadow:0 0 0 3px var(--teal-tint)}
 
   /* ── Masthead (nav injected by /assets/header.js) ── */
-  .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;letter-spacing:-.01em;color:var(--ink);text-decoration:none}
-  .logo .mark{width:30px;height:30px;border-radius:var(--radius);background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;font-family:Georgia,"Times New Roman",Times,serif;font-style:italic}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:600;font-size:17px;letter-spacing:-.01em;color:var(--ink);text-decoration:none}
+  .logo .mark{width:30px;height:30px;border:1.5px solid var(--ink);border-radius:var(--radius);color:var(--ink);display:flex;align-items:center;justify-content:center;font-weight:600;font-size:14px;font-style:italic;position:relative}
+  .logo .mark::after{content:"";position:absolute;top:-4px;right:-4px;width:7px;height:7px;background:var(--amber);border-radius:50%}
 
   /* ── Hero ── */
   .hero{padding:46px 0 30px;text-align:left}
-  .eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-dark);background:var(--teal-tint);border:1px solid rgba(6,95,70,.15);padding:6px 12px;border-radius:99px;margin-bottom:18px}
-  h1{font-family:Georgia,"Times New Roman",Times,serif;font-style:italic;font-weight:400;font-size:32px;line-height:1.22;letter-spacing:-.005em;margin-bottom:16px}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-dark);margin-bottom:18px}
+  @media (prefers-color-scheme: dark){ .eyebrow{color:var(--teal)} }
+  .eyebrow::before{content:"";width:16px;height:1px;background:var(--amber)}
+  h1{font-family:"Iowan Old Style","Palatino Linotype",Palatino,"URW Palladio L","Book Antiqua",Georgia,serif;font-weight:500;font-size:32px;line-height:1.2;letter-spacing:-.005em;margin-bottom:16px}
   .standfirst{font-size:18px;color:var(--muted);max-width:62ch}
 
   /* ── Body copy ── */
   .sec{margin:40px 0}
-  .sec > h2{font-family:Georgia,serif;font-size:21px;font-weight:700;letter-spacing:-.005em;margin-bottom:14px;color:var(--ink)}
+  .sec > h2{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:21px;font-weight:600;letter-spacing:-.005em;margin-bottom:14px;color:var(--ink)}
   .sec p{color:var(--ink-soft);font-size:16px;margin-bottom:16px}
   .sec p:last-child{margin-bottom:0}
   .sec p a{color:var(--teal-dark)}
+  @media (prefers-color-scheme: dark){ .sec p a{color:var(--teal)} }
 
   /* ── Footer / disclaimer ── */
   footer{border-top:1px solid var(--line);background:var(--panel);margin-top:50px;padding:30px 0 40px}
   .foot-meta{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--muted);margin-bottom:18px}
   .foot-meta a{color:var(--teal-dark);text-decoration:none}
+  @media (prefers-color-scheme: dark){ .foot-meta a{color:var(--teal)} }
   .disclaimer{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:14px}
   .disclaimer b{color:var(--ink-soft)}
   .copyright{font-size:13px;color:var(--muted)}

@@ -124,11 +124,10 @@
   .card.value .badge{background:var(--amber);color:#1A1207}
   .card .name{font-size:26px;font-weight:600;margin-top:16px;font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif}
   .card .tagline{font-size:14px;color:var(--muted);font-style:italic;margin-top:4px}
-  .pricebox{margin-top:22px;padding:16px;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);display:grid;grid-template-columns:1fr 1fr;gap:14px}
-  .pricebox .full{grid-column:1/-1;padding-top:10px;border-top:1px solid var(--line)}
-  .pricebox span{font-size:11px;color:var(--muted);display:block;margin-bottom:2px}
-  .pricebox strong{font-size:15px;font-variant-numeric:tabular-nums}
-  .featlist{list-style:none;display:grid;gap:11px;margin-top:22px}
+  .card .priceline{margin-top:14px;font-size:14.5px;color:var(--ink-soft)}
+  .card .priceline b{color:var(--teal-dark);font-variant-numeric:tabular-nums}
+  @media (prefers-color-scheme: dark){ .card .priceline b{color:var(--teal)} }
+  .featlist{list-style:none;display:grid;gap:11px;margin-top:18px}
   .featlist li{font-size:14.5px;color:var(--ink-soft);padding-left:24px;position:relative}
   .featlist li::before{content:"";position:absolute;left:0;top:5px;width:15px;height:15px;border-radius:50%;background:var(--teal-tint);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230B5D3B' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");background-size:10px;background-repeat:no-repeat;background-position:center}
   .card .cta{margin-top:24px;width:100%}
@@ -312,7 +311,7 @@
     </div>
   </div>
 
-  <!-- PRODUCT CARDS -->
+  <!-- MATCHUP -->
   <section class="sec">
     <div class="sechead">
       <div>
@@ -329,18 +328,11 @@
           <span class="badge">Best Overall</span>
           <div class="name">Systeme.io</div>
           <div class="tagline">The most complete platform for Indian creators starting out</div>
-          <div class="pricebox">
-            <div><span>Starting price</span><strong>Free forever</strong></div>
-            <div><span>Free contacts</span><strong>2,000</strong></div>
-            <div class="full"><span>Paid plans from</span><strong>$17/month (2 months free billed annually)</strong></div>
-          </div>
+          <p class="priceline"><b>Free forever</b> · paid from $17/mo (billed annually)</p>
           <ul class="featlist">
-            <li><b>Genuinely free forever plan</b> — 2,000 contacts, 3 sales funnels, 1 online course, 1 membership site, unlimited emails. No card, no time limit, no "trial."</li>
             <li><b>All-in-one stack</b> — funnels, email, courses, membership sites, blog, affiliate manager, automation — one login, one bill</li>
-            <li><b>Unlimited emails on every plan, including free</b> — no per-contact email tax that scales punishingly with your list size</li>
-            <li><b>Run your own affiliate program</b> — recruit, track, and pay affiliates from inside the tool</li>
-            <li><b>Natively supports Razorpay</b> — plus Stripe and PayPal, though those two have INR limitations (PayPal INR is domestic-only; Amex isn't supported via Stripe in INR)</li>
-            <li><b>Sells physical products, not just digital</b> — add size/colour variants, set inventory limits, calculate shipping, or bundle a physical item as an order bump on a digital sale</li>
+            <li><b>Natively supports Razorpay</b> — plus Stripe and PayPal, though those two have INR limitations</li>
+            <li><b>Sells physical products, not just digital</b> — variants, inventory, shipping, or as an order bump on a digital sale</li>
             <li><b>0% transaction fees</b> on every plan, including free</li>
           </ul>
         </div>
@@ -356,40 +348,23 @@
           <span class="badge">Best for Email-First</span>
           <div class="name">GetResponse</div>
           <div class="tagline">The stronger pick for Indian creators who live in email automation</div>
-          <div class="pricebox">
-            <div><span>Starting price</span><strong>$19/month</strong></div>
-            <div><span>Free option</span><strong>14-day trial, then limited</strong></div>
-            <div class="full"><span>Webinars require</span><strong>$69/mo Creator plan</strong></div>
-          </div>
+          <p class="priceline"><b>From $19/mo</b> · 14-day trial, no permanent free plan</p>
           <ul class="featlist">
-            <li><b>Strongest email automation in this comparison</b> — visual workflow builder with conditional logic and behavioural triggers (unlimited workflows from the $59/mo Marketer plan up; the $19 Starter plan is capped at 1 workflow)</li>
-            <li><b>Webinar tool — but only on the $69/month Creator plan and up</b>, not the entry $19 tier. Factor that into the real cost if webinars matter to you.</li>
-            <li><b>AI email writer</b> — generates subject lines, body copy, and full sequences from a brief (3 free uses on entry plans)</li>
-            <li><b>No permanent free plan</b> — a 14-day trial of premium features, then a restricted free version. Budget for the $19/month Starter plan from day one.</li>
-            <li><b>No native Razorpay</b> — pay via Stripe, PayPal, Square, BlueSnap, or PayU instead (see our INR payments FAQ below)</li>
+            <li><b>Conditional-logic workflow builder</b> — unlimited workflows from the $59/mo Marketer plan up; the $19 Starter tier is capped at 1</li>
+            <li><b>AI email writer</b> — generates subject lines, body copy, and full sequences from a brief</li>
             <li><b>Ecommerce integrations</b> — direct Shopify, WooCommerce, Magento, and PrestaShop connectors</li>
-            <li><b>Course hosting on the $69/month Creator plan</b> — supports up to 40,000 students, not included on lower tiers</li>
+            <li><b>No native Razorpay</b> — pay via Stripe, PayPal, Square, BlueSnap, or PayU instead (see FAQ below)</li>
           </ul>
         </div>
         <div>
           <a class="btn outline cta" href="https://www.getresponse.com" rel="nofollow">Start Free with GetResponse</a>
-          <p class="micro">14-day free trial · No permanent free plan · Cancel anytime</p>
+          <p class="micro">14-day free trial · Cancel anytime</p>
           <p class="micro">Non-affiliate link — we don't currently earn a commission from GetResponse</p>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- COMPARISON TABLE -->
-  <section class="sec">
-    <div class="sechead">
-      <div>
-        <span class="tag">03 / Analysis</span>
-        <h2>Systeme.io vs GetResponse, side by side</h2>
-      </div>
-      <p class="sub">The numbers that matter for Indian creators in 2026.</p>
-    </div>
-    <div class="tablewrap">
+    <div class="tablewrap" style="margin-top:24px">
       <table>
         <thead>
           <tr><th>Feature</th><th>Systeme.io</th><th>GetResponse</th><th>Winner</th></tr>
@@ -399,24 +374,6 @@
             <td>Free plan (real, not a trial)</td>
             <td>Forever free · 2,000 contacts</td>
             <td>14-day trial only, then a restricted free version</td>
-            <td><span class="winpill">Systeme.io</span></td>
-          </tr>
-          <tr>
-            <td>Cheapest paid plan</td>
-            <td>$17/mo (2 months free annual)</td>
-            <td>$19/mo</td>
-            <td><span class="winpill">Systeme.io</span></td>
-          </tr>
-          <tr>
-            <td>What's included on the starting paid plan</td>
-            <td>Funnels + email + 5 courses + membership + automation + affiliates</td>
-            <td>Email + basic automation only</td>
-            <td><span class="winpill">Systeme.io</span></td>
-          </tr>
-          <tr>
-            <td>Sales funnel builder</td>
-            <td>Built-in, visual drag-drop</td>
-            <td>Yes, but separate workflow</td>
             <td><span class="winpill">Systeme.io</span></td>
           </tr>
           <tr>
@@ -437,12 +394,6 @@
             <td>Yes, live + on-demand — but only on the $69/mo Creator plan and up</td>
             <td><span class="winpill amber">GetResponse</span></td>
           </tr>
-          <tr>
-            <td>Best for</td>
-            <td>All-in-one creators, coaches, dropshippers</td>
-            <td>Email-led businesses, advanced automation, webinar funnels</td>
-            <td>—</td>
-          </tr>
         </tbody>
       </table>
     </div>
@@ -452,10 +403,9 @@
   <div class="verdict">
     <div class="vhead">
       <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/><path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12"/></svg>
-      <h2>Which should you choose?</h2>
+      <h2>Ready to start?</h2>
     </div>
-    <p><strong>Choose Systeme.io if</strong> you're a one-person business or small team running a course, coaching practice, dropshipping store, or content brand and you want one platform doing everything — funnels, emails, courses, memberships, automation, and your own affiliate program — for one monthly fee. Especially if you're starting out and need a free way to test before paying anything.</p>
-    <p><strong>Choose GetResponse if</strong> your business is primarily email-driven and you need sophisticated automation and conditional workflows — available from their $59/month Marketer plan. Best fit if you already use Shopify or WooCommerce and want deep ecommerce email integration, or if you're willing to pay for their $69/month Creator plan for native webinars and course hosting.</p>
+    <p>Both offer a way to try before you commit — <strong>Systeme.io</strong> free forever, <strong>GetResponse</strong> free for 14 days. Pick Systeme.io for the full stack at a lower cost, or GetResponse if deeper email automation is worth paying more for.</p>
     <div class="vctas">
       <a class="btn solid" href="https://systeme.io/?sa=sa0275960310e84259c33cc2e5a78b61a472668750" rel="nofollow sponsored">Start Free with Systeme.io</a>
       <a class="btn outline" href="https://www.getresponse.com" rel="nofollow">Try GetResponse</a>
@@ -476,11 +426,11 @@
   <section class="sec faq">
     <div class="sechead">
       <div>
-        <span class="tag">04 / FAQ</span>
+        <span class="tag">03 / FAQ</span>
         <h2>Common questions</h2>
       </div>
     </div>
-    <details open>
+    <details>
       <summary>Is the Systeme.io free plan really free, or just a trial in disguise?</summary>
       <div class="ans">It's genuinely free, forever — no credit card required at signup, no automatic conversion to a paid plan, no time limit. The free tier includes 2,000 contacts, 3 sales funnels, 1 online course, 1 membership site, and unlimited emails. You only pay if you want to lift the contact, funnel, or course limits, or unlock features like evergreen webinars. Many Indian creators run their entire side business on the free plan for months before upgrading.</div>
     </details>

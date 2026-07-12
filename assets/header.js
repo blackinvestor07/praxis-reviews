@@ -21,7 +21,8 @@
             '</button>' +
             '<div class="dropdown">' +
               '<div class="dropdown-panel">' +
-                '<a href="/email-marketing/">Business &amp; Marketing Software</a>' +
+                '<a class="dcat" href="/email-marketing/">Business &amp; Marketing Software</a>' +
+                '<a class="dsub" href="/email-marketing/systeme-io-vs-getresponse-india/">Systeme.io vs GetResponse (India)</a>' +
               '</div>' +
             '</div>' +
           '</div>' +
@@ -47,9 +48,11 @@
     'header.site-nav .nav-item.open .nav-toplink .chev{transform:rotate(180deg)}' +
     'header.site-nav .dropdown{position:absolute;top:100%;left:0;padding-top:14px;display:none;z-index:210}' +
     'header.site-nav .nav-item.open .dropdown{display:block}' +
-    'header.site-nav .dropdown-panel{min-width:230px;background:var(--white);border:1px solid var(--line);border-radius:8px;box-shadow:0 12px 24px rgba(22,32,46,.12);padding:6px}' +
+    'header.site-nav .dropdown-panel{min-width:260px;background:var(--white);border:1px solid var(--line);border-radius:8px;box-shadow:0 12px 24px rgba(22,32,46,.12);padding:6px}' +
     'header.site-nav .dropdown a{display:block;padding:10px 12px;font-size:14px;font-weight:600;color:var(--ink-soft);text-decoration:none;border-radius:6px;white-space:nowrap}' +
     'header.site-nav .dropdown a:hover{background:var(--panel, rgba(0,0,0,.04));color:var(--teal-dark)}' +
+    'header.site-nav .dropdown a.dsub{font-size:12.5px;font-weight:500;color:var(--muted);padding:8px 12px 8px 22px;position:relative}' +
+    'header.site-nav .dropdown a.dsub::before{content:"";position:absolute;left:12px;top:50%;width:5px;height:1px;background:var(--line)}' +
 
     '@media (min-width:641px){' +
       'header.site-nav .nav-item:hover .dropdown{display:block}' +

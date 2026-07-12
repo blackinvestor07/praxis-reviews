@@ -21,7 +21,7 @@
             '</button>' +
             '<div class="dropdown">' +
               '<div class="dropdown-panel">' +
-                '<a class="dcat" href="/email-marketing/">Business &amp; Marketing Software</a>' +
+                '<a class="dcat" href="/email-marketing/">Marketing &amp; Sales</a>' +
                 '<a class="dsub" href="/email-marketing/systeme-io-vs-getresponse-india/">Systeme.io vs GetResponse (India)</a>' +
               '</div>' +
             '</div>' +
